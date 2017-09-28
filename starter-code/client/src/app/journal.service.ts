@@ -11,5 +11,11 @@ export class JournalService {
 
   getList() {
     return this.http.get(`${this.BASE_URL}/api/journal-entries`)
-          .map((res) => res.json());    }
+          .map((res) => res.json());
+  }
+
+  get(id) {
+      return this.http.get(`${this.BASE_URL}/api/journal-entries/${id}`)
+        .map((res) => res.json());
+    }
 }
